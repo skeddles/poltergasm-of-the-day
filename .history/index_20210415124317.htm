@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Pumpkin Dailies</title>
+	<meta name="description" content="Inspiring Daily Prompts for Pixel Art">
+	<meta name="author" content="pumpkin">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/shape-shading-reference-tool.css">
+
+	<style>
+		body {
+			background-color: #231924;
+			font-family: 'Exo 2', sans-serif;
+			color: #824ed6;
+			text-align: center;
+			margin-top: 30vh;
+		}
+		.wrapper h1 {
+			color: #b83525
+		}
+		.wrapper p.result {
+			display: none;
+			font-size: 5em;
+			font-weight: 1000;
+		}
+		.wrapper img {
+			border-radius: 20em;
+		}		
+	</style>
+</head> 
+<body>
+
+	<section class="wrapper">
+		<h1>The pumpkin daily is</h1>
+		<p class="result">
+			<img src="avvy.png" />
+			<h2>Poltergasm!</h2>
+			Check out his <a href="https://twitter.com/IamPoltergasm">Twitter</a>!
+		</p>
+	</section>
+
+	<script >
+		
+		const periodLength = 1000;
+		const title = document.querySelector('.wrapper h1');
+		const result = document.querySelector('.wrapper p.result');
+		setTimeout(()=>{
+			title.innerHTML += '.';
+
+			setTimeout(()=>{
+				title.innerHTML += '.';
+
+				setTimeout(()=>{
+					title.innerHTML += '.';
+					
+					setTimeout(()=>{
+						result.style.display = 'block';
+					}, periodLength);
+				}, periodLength);
+			}, periodLength);
+		}, periodLength);
+	</script>
+</body>
+</html>

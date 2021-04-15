@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Pumpkin Dailies</title>
+	<meta name="description" content="Inspiring Daily Prompts for Pixel Art">
+	<meta name="author" content="pumpkin">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/shape-shading-reference-tool.css">
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+	<style>
+		html, body {
+			height: 100%;
+			overflow: hidden;
+		}
+		body {
+			background-color: #231924;
+			font-family: 'Exo 2', sans-serif;
+			color: #824ed6;
+			text-align: center;
+			
+		}
+		.wrapper h1 {
+			margin-top: 20vh;
+			color: #6d40b4
+		}
+		.wrapper .result {
+			display: none;
+			font-weight: 1000;
+		}
+		.wrapper .result h2 {font-size: 2em;}
+		.wrapper img {
+			border-radius: 20em;
+		}		
+	</style>
+</head> 
+<body>
+
+	<section class="wrapper">
+		<h1>The Poltergasm of the day is</h1>
+		<div class="result">
+			<img src="avvy.jpg" />
+			<h2>Poltergasm!</h2>
+			Check out his <a href="https://twitter.com/IamPoltergasm">Twitter</a>!
+		</div>
+	</section>
+
+	<script >
+		
+		const periodLength = 100;
+		const title = document.querySelector('.wrapper h1');
+		const result = document.querySelector('.wrapper .result');
+		const image = document.querySelector('.wrapper .result img');
+		setTimeout(()=>{
+			title.innerHTML += '.';
+
+			setTimeout(()=>{
+				title.innerHTML += '.';
+
+				setTimeout(()=>{
+					title.innerHTML += '.';
+
+					setTimeout(()=>{
+						result.style.display = 'block';
+
+						
+						var picHeight = image.offsetHeight / 2;
+						var picLoc = result.getBoundingClientRect().top
+						var pageMiddle = (picLoc+picHeight) / window.innerHeight;
+					
+					console.log('confetti y', picHeight, picLoc, pageMiddle)
+
+
+
+						confetti({ 
+							particleCount: 500,
+							spread: 360,
+							gravity: 2,
+							origin: {
+								x: 0.5,
+								y: pageMiddle
+							}
+						});
+					}, periodLength);
+				}, periodLength);
+			}, periodLength);
+		}, periodLength);
+	</script>
+</body>
+</html>
